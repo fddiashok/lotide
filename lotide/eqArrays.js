@@ -6,17 +6,17 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-function eqArrays(a, b) {
-  if (a.length != b.length)
-    return false;
+function eqArrays(arr1 , arr2) {
+  if (arr1.length != arr2.length)
+    return "Arrays are not equal";
   else {
     // comapring each element of array
-    for (var i = 0; i < a.length; i++)
-      if (a[i] != b[i]) {
-        return false;
+    for (var i = 0; i < arr1.length; i++)
+      if (arr1[i] !== arr2[i]) {
+        return "Arrays are not equal";
       }
   }
-  return true;
+  return "Arrays are equal";
 }
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3, 4]), false); //FAIL
