@@ -1,23 +1,34 @@
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
-    console.log(`${actual} == ${expected}`);
+    console.log(`✅✅✅${actual} == ${expected}`);
   } else if (actual !== expected) {
-    console.log(`${actual} != ${expected}`);
+    console.log(`🛑🛑🛑${actual} != ${expected}`);
   }
 };
 const tail = function(array) {
   let newArray = [];
+  if(array.length>1){
   for (let i = 1; i < array.length; i++) {
     newArray.push(array[i]);
   }
-  return (newArray);
+  return (newArray);}
+  if(array.length===1 || array.length===0){
+    return newArray;
+  }
 };
-// Test Case:Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!*/
+
+
+
 // Test Case 1: Check the returned array elements
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+let result = tail(["Hello", "Lighthouse", "Labs"]);
+assertEqual(result.length, 2); 
+assertEqual(result[0], "Lighthouse"); 
+assertEqual(result[1], "Labs");
+
+//TEST CASE 2 :
+result=tail(['one']);
+assertEqual(result.length, 0);
+
+//TEST CASE 3 :
+result=tail([]);
+assertEqual(result.length, 0);
