@@ -1,15 +1,17 @@
-const assertEqual = require('../assertEqual');
-const tail= require('../tail');
-// Test Case 1: Check the returned array elements
-let result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); 
-assertEqual(result[0], "Lighthouse"); 
-assertEqual(result[1], "Labs");
+const assert= require("chai").assert
+const tail = require("../tail")
 
-//TEST CASE 2 :
-result=tail(['one']);
-assertEqual(result.length, 0);
+describe("#Tail", ()=> {
+it("returns ['lighthouse', 'labs'] for ['hello', 'lighthouse', 'labs']",()=> {
+assert.deepEqual(tail(['hello', 'lighthouse', 'labs']), ['lighthouse', 'labs']);
+});
 
-//TEST CASE 3 :
-result=tail([]);
-assertEqual(result.length, 0);
+it("returns [] for [1]", ()=>{
+  assert.deepEqual(tail([1]),[]);
+})
+
+it("returns [] for []", ()=>{
+  assert.deepEqual(tail([]),[]);
+})
+
+});
