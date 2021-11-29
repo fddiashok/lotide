@@ -1,3 +1,4 @@
+var chai = require('chai');
 const min = function(numbers) {
   // Write code here that returns the smallest value in numbers
   let sortedArray = numbers.sort(function(a,b){

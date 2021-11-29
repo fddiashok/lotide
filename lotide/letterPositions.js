@@ -22,8 +22,8 @@ function eqArrays(arr1, arr2) {
 }*/
 
 const converStringToArray = function (string) {
-  const noSpaces = string.split(' ').join('');
-  const arrayOfStrings = noSpaces.split('');
+
+  const arrayOfStrings = string.split('');
   // console.log(arrayOfStrings);
   return arrayOfStrings;
 }
@@ -33,21 +33,24 @@ const letterPositions = function (sentence) {
   // logic to update results here
   const array = converStringToArray(sentence);
   console.log(array);
+
   for (let item of array) {
-    results[item] = [];
-    array.forEach((element, index) => {
-      if (item === element) {
-        results[item].push(index);
-      }
-    })
+    if (item !== ' ') {
+      results[item] = [];
+      array.forEach((element, index) => {
+        if (item === element) {
+          results[item].push(index);
+        }
+      })
+    }
   }
   return results;
 };
 
-console.log(letterPositions("hello world"));
-// assertEqual("hello",{h:0, e:1, l:[2, 3], o:4});*/
-console.log(letterPositions("mmmm"));
-console.log(letterPositions("world world"));
+assertEqual((letterPositions("hello world")['e']),[1])
+// console.log(letterPositions("hello world"));
+// console.log(letterPositions("mmmm"));
+// console.log(letterPositions("world world"));
 
 
 

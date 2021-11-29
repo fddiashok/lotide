@@ -27,12 +27,12 @@ const eqObjects = function (object1, object2) {
   const keys1 = Object.keys(object1)
   const keys2 = Object.keys(object2);
 
-  //check if values are arrays or not
+
   if (keys1.length == keys2.length) {
     for (let item of keys1) {
-      // console.log(`object1 : ${object1[item]} AND object2: ${object2[item]}`)
-      if(Array.isArray(object1[item])&& Array.isArray(object2[item])){
-        return eqArrays(object1[item],object2[item]);
+      //Check if arrays are equal or not
+      if (Array.isArray(object1[item]) && Array.isArray(object2[item])) {
+        return eqArrays(object1[item], object2[item]);
       }
       else if (object1[item] !== object2[item])
         return false

@@ -1,9 +1,9 @@
-const assertEqual = function (actual, expected) {
-  if (actual.length === expected.length) {
-    console.log(`Are arrays equal? : ${eqArrays(actual,expected)}`);
-  } else if (actual.length !== expected.length) {
-    console.log(`Are arrays unequal: True`);
-  }
+const assertArraysEqual = function (actual, expected) {
+  if (eqArray(actual, expected)) {
+    console.log(`✅✅✅Assertion Passed: ${actual}=${expected}`);
+  } else
+    console.log(`🛑🛑🛑Assertion Failed: ${actual} != ${expected}`);
+
 };
 
 function eqArrays(arr1, arr2) {
@@ -19,8 +19,8 @@ function eqArrays(arr1, arr2) {
     return true;
   }
 }
-  assertEqual([1, 2, 3], [1, 2, 3]); // => should PASS
-  assertEqual([1, 2, 3], [1, 2, 3, 4]); //FAIL
-  assertEqual([1, 2, 3], [3, 2, 3]); //FAIL
-  assertEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-  assertEqual(["1", "2", "3"], ["1", "2", 3]); // => false
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+assertArraysEqual([1, 2, 3], [1, 2, 3, 4]); //FAIL
+assertArraysEqual([1, 2, 3], [3, 2, 3]); //FAIL
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false

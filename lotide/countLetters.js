@@ -8,9 +8,7 @@ const assertEqual = function(actual, expected) {
 
 
 const converStringToArray=function(string){
-  if(string=''){
-    
-  }
+  
   return (string.split(' ').join('')).split('');
 }
 
